@@ -155,7 +155,6 @@ export default function Home() {
    **/
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log("This will run every 5 seconds!");
       setCopyToClipboard(copyIcon);
     }, 5000);
     return () => {
