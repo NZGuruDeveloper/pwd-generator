@@ -107,7 +107,18 @@ export default function Home() {
         .map((inclusion) => inclusion.value)
         .join("")
     );
-  }, [inclusions, charLength]);
+  }, [inclusions]);
+
+  /**
+   *  Display the stregth of the generated password
+   *  based on the number of uppercase, lowercase, numbers and symbols in the password
+   *
+   * */
+  useEffect(() => {
+    showStrength();
+  }, [charLength]);
+
+  function showStrength() {}
 
   /**
    * Generates a random password based on the given criteria.
@@ -164,13 +175,13 @@ export default function Home() {
   }, [copyToClipboard]);
 
   return (
-    <main className="container">
+    <main className=" w-screen h-screen">
       <div className="flex justify-center items-center background-gray-dark">
-        <div className="generator card shadow-2xl p-10 flex flex-col gap-5 min-w-[540px]">
+        <div className="generator card shadow-2xl p-10 flex flex-col gap-5 max-w-[540px]">
           <h2 className="text-2xl text-gray-dark text-center">
             Password Generator
           </h2>
-          <p className="text-bright-gray bg-controls-background-dark-gray p-5 text-bold text-3xl whitespace-normal">
+          <p className="text-bright-gray bg-controls-background-dark-gray p-5 text-bold text-3xl whitespace-normal max-w-[400px] break-words">
             {password.toString()}
             <span className="text-2xl controls-green float-right">
               <Image
@@ -229,7 +240,12 @@ export default function Home() {
               <div className="text-2xl text-gray-dark bg-background-black p-5 mb-3">
                 Strength
                 <span className="text-2xl controls-green float-right">
-                  {strength.toString()}
+                  <div class="password-strength">
+                    <div class="bar uppercase"></div>
+                    <div class="bar lowercase"></div>
+                    <div class="bar numbers"></div>
+                    <div class="bar symbols"></div>
+                  </div>
                 </span>
               </div>
 

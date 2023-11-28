@@ -38,3 +38,30 @@ body {
 .slidecontainer {
   width: 100%;
 }
+
+/* strength bars css */
+.password-strength {
+  display: flex;
+}
+
+.bar {
+  width: 10px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.uppercase {
+  background-color: rgb(var(--strength-too-weak));
+}
+
+.lowercase {
+  background-color: rgb(var(--strength-weak));
+}
+
+.numbers {
+  background-color: rgb(var(--strength-medium));
+}
+
+.symbols {
+  background-color: rgb(var(--controls-green));
+}
