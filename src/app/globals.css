@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --controls-green: 164,255,175;
+    --background-black:24, 23, 31;
+    --controls-background-dark-gray: 36,35,44;
+    --text-bright-gray:230,229,234;
+    --text-gray: 128, 124, 146;
+    --strength-too-weak: 246, 74, 74;
+    --strength-weak: 251, 124, 88;
+    --strength-medium: 248, 205, 101;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb)); */
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* slider css */
+.slidecontainer {
+  width: 100%;
+}
