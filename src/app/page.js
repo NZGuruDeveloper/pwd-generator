@@ -253,7 +253,7 @@ export default function Home() {
                 className="generate-password bg-controls-green text-background-black font-bold p-3 flex justify-center"
                 onClick={generatePassword}
               >
-                Generate{" "}
+                <span class="text">Generate{" "}</span>
                 <span className="ml-2 p-2">
                   <Image
                     priority
@@ -262,6 +262,7 @@ export default function Home() {
                     className=""
                   />
                 </span>
+                <span class="shimmer"></span>
               </button>
             </div>
           </div>
